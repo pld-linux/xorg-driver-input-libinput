@@ -1,18 +1,13 @@
 Summary:	A libinput-based X.org input driver
 Summary(pl.UTF-8):	Sterownik wejściowy X.org oparty na libinput
 Name:		xorg-driver-input-libinput
-Version:	0.10.0
-Release:	2
+Version:	0.11.0
+Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-input-libinput-%{version}.tar.bz2
-# Source0-md5:	e0d6fc2aceba154e57501d36e361d3f7
+# Source0-md5:	710f0a2ecb6a3aefee80aba0fbbe6e18
 Source1:	90-libinput.conf
-# Source1-md5: xyz
-Patch0:		0001-Only-init-abs-axes-if-we-don-t-have-acceleration.patch
-# fedora Bug 1208992 - Mouse cursor doesn't move when moving the physical mouse slowly
-Patch1:		0001-Use-the-new-unaccelerated-valuator-ValuatorMask-feat.patch
-Patch2:		0001-Fix-missing-scroll-methods-default-scroll-button-pro.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -52,9 +47,6 @@ Plik nagłówkowy sterownika libinput.
 
 %prep
 %setup -q -n xf86-input-libinput-%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
