@@ -1,17 +1,16 @@
 Summary:	A libinput-based X.org input driver
 Summary(pl.UTF-8):	Sterownik wejściowy X.org oparty na libinput
 Name:		xorg-driver-input-libinput
-Version:	0.14.0
+Version:	0.15.0
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-input-libinput-%{version}.tar.bz2
-# Source0-md5:	10c06d3dd626dfdad3174d1f4e856a2a
-Source1:	90-libinput.conf
+# Source0-md5:	4a4766a139665ae42870bf432be5631e
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
-BuildRequires:	libinput-devel >= 1.0.0
+BuildRequires:	libinput-devel >= 1.1.0
 BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.389
@@ -20,7 +19,7 @@ BuildRequires:	xorg-proto-xproto-devel
 BuildRequires:	xorg-util-util-macros >= 1.8
 BuildRequires:	xorg-xserver-server-devel >= 1.10
 %{?requires_xorg_xserver_xinput}
-Requires:	libinput >= 1.0.0
+Requires:	libinput >= 1.1.0
 Requires:	xorg-xserver-server >= 1.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,6 +54,7 @@ Plik nagłówkowy sterownika libinput.
 %{__autoheader}
 %{__automake}
 %configure \
+	--with-xorg-conf-dir=/etc/X11/xorg.conf.d \
 	--disable-static
 
 %{__make}
@@ -66,8 +66,6 @@ install -d $RPM_BUILD_ROOT/etc/X11/xorg.conf.d/
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-cp -p %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xorg.conf.d/90-libinput.conf
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la
 
