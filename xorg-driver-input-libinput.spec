@@ -5,9 +5,9 @@ Version:	0.20.0
 Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-input-libinput-%{version}.tar.bz2
+Source0:	https://xorg.freedesktop.org/releases/individual/driver/xf86-input-libinput-%{version}.tar.bz2
 # Source0-md5:	9a9e638c3e50e1789041619716ac59a2
-URL:		http://xorg.freedesktop.org/
+URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libinput-devel >= 1.5.0
@@ -19,7 +19,7 @@ BuildRequires:	xorg-proto-xproto-devel
 BuildRequires:	xorg-util-util-macros >= 1.8
 BuildRequires:	xorg-xserver-server-devel >= 1.10
 %{?requires_xorg_xserver_xinput}
-Requires:	libinput >= 1.2.0
+Requires:	libinput >= 1.5.0
 Requires:	xorg-xserver-server >= 1.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
