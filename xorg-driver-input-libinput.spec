@@ -1,12 +1,12 @@
 Summary:	A libinput-based X.org input driver
 Summary(pl.UTF-8):	Sterownik wejściowy X.org oparty na libinput
 Name:		xorg-driver-input-libinput
-Version:	0.29.0
+Version:	0.30.0
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	https://xorg.freedesktop.org/releases/individual/driver/xf86-input-libinput-%{version}.tar.bz2
-# Source0-md5:	d600e8e2e30747b8ce49ec5294ff0ab6
+# Source0-md5:	11dcfa2cc39f790731a9545fcdeea717
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
